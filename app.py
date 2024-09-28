@@ -16,5 +16,9 @@ def prediction_result_DBS():
     r = (-50.6 * q) + 90.2
     return (render_template("prediction_result_DBS.html",r=r))
 
+@app.route("/faq", methods = ["GET","POST"])
+def faq():
+    return (render_template("faq.html"))
+
 if __name__ == "__main__":
     app.run()
