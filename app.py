@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request
 import google.generativeai as genai
 import os
-import tkinter as tk
-from tkinter import messagebox
 
 model = genai.GenerativeModel("gemini-1.5-flash")
 api = os.getenv("MAKERSUITE")
