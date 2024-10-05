@@ -22,6 +22,16 @@ def prediction_result_DBS():
     r = (-50.6 * q) + 90.2
     return (render_template("prediction_result_DBS.html",r=r))
 
+@app.route("/predict_Creditability", methods = ["GET","POST"])
+def predict_Creditability():
+    return (render_template("predict_Creditability.html"))
+
+@app.route("/predict_Creditability_result", methods = ["GET","POST"])
+def prediction_Creditability_result():
+    q = float(request.form.get("q"))
+    r = (-0.00014068 * q) + 1.35314472
+    return (render_template("predict_Creditability_result.html",r=r))
+
 @app.route("/faq", methods = ["GET","POST"])
 def faq():
     return (render_template("faq.html"))
