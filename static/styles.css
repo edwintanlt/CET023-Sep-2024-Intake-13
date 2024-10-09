@@ -20,6 +20,11 @@ body {
     text-align: center;
 }
 
+h1 {
+    text-align: center;
+    color: #333;
+}
+
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -28,6 +33,25 @@ h2 {
 
 form {
     margin: 15px 0;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.options a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.options a:hover {
+    background-color: #0056b3;
 }
 
 input[type="submit"] {
@@ -76,6 +100,10 @@ p {
         padding: 20px;
     }
 
+    h1 {
+        font-size: 25px;
+    }
+
     h2 {
         font-size: 20px;
     }
@@ -88,5 +116,3 @@ p {
         font-size: 16px;
     }
 }
-
-

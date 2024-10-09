@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Shares Information</h1>
+
+        <h2>{{r}}</h2>
+
+        <!--
+        <div class="data-section">
+            <div id="previous-close">Previous Close: </div>
+            <div id="current-price">Current Price: </div>
+            <div id="dollar-change">Dollar Change: </div>
+            <div id="percent-change">Percent Change: </div>
+        </div>
+
+        <div class="horizontal-buttons">
+            <a href="index.html">Home</a>
+            <a id="back-button">Back</a>
+        </div>
+        -->
+    </div>
+
+    <script>
+        // Get query parameters for stock data
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                previousClose: parseFloat(params.get('previousClose')),
+                currentPrice: parseFloat(params.get('currentPrice')),
+                dollarChange: parseFloat(params.get('dollarChange')),
+                percentChange: parseFloat(params.get('percentChange'))
+            };
+        }
+
+        // Extract and display stock data
+        const { previousClose, currentPrice, dollarChange, percentChange } = getQueryParams();
+
+        document.getElementById('previous-close').innerText = `Previous Close: ${previousClose}`;
+        document.getElementById('current-price').innerText = `Current Price: ${currentPrice}`;
+        document.getElementById('dollar-change').innerHTML = `Dollar Change: ${dollarChange} <span class="arrow ${dollarChange < 0 ? 'down' : ''}">${dollarChange < 0 ? '↓' : '↑'}</span>`;
+        document.getElementById('percent-change').innerHTML = `Percent Change: ${percentChange.toFixed(2)}% <span class="arrow ${percentChange < 0 ? 'down' : ''}">${percentChange < 0 ? '↓' : '↑'}</span>`;
+
+        // Back button functionality
+        document.getElementById('back-button').addEventListener('click', function() {
+            window.history.back(); // Navigate to the previous page
+        });
+    </script>
+
+</body>
+</html>

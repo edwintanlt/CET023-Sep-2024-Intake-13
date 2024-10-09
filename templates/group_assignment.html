@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Select Category</h1>
+
+            <div class="options">
+                <form action="/banks" method="post">
+                    <input type="submit" value="Banks">
+                </form>
+                <form action="/reits" method="post">
+                    <input type="submit" value="Reits">
+                </form>
+                <form action="/glcs" method="post">
+                    <input type="submit" value="Glcs">
+                </form>
+            </div>
+    
+            <div class="input-section">
+                <label for="ticker">Enter the ticker number:</label><br>
+                <input type="text" id="ticker" name="ticker" placeholder="Enter ticker number"><br>
+                <button type="submit" id="submit-btn">Submit</button>
+                <!-- <div id="error-message">Oops... pls key in a correct ticker symbol!</div> -->
+            </div>
+        </div>
+    </body>
+</html>
