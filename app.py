@@ -79,15 +79,39 @@ def glcs():
 @app.route("/shares", methods = ["GET","POST"])
 def shares():
     # Get the stock symbol from the form
-    # q = request.form['q']
+    q = request.form['q']
 
     # Fetch stock data
-    r = get_stock_data("D05.SI")
+    if q == "DBS":
+        r = get_stock_data("D05.SI")
+    elif q == "OCBC":
+        r = get_stock_data("O39.SI")
+    elif q == "UOB":
+        r = get_stock_data("U11.SI")
+    elif q == "Capitaland":
+        r = get_stock_data("9CI.SI")
+    elif q == "Frasers":
+        r = get_stock_data("TQ5.SI")
+    elif q == "Mapletree":
+        r = get_stock_data("ME8U.SI")
+    elif q == "Capitaland":
+        r = get_stock_data("9CI.SI")
+    elif q == "Frasers":
+        r = get_stock_data("TQ5.SI")
+    elif q == "Mapletree":
+        r = get_stock_data("ME8U.SI")
+    elif q == "Sembcorp Industries":
+        r = get_stock_data("U96.SI")
+    elif q == "Keppel Ltd":
+        r = get_stock_data("BN4.SI")
+    elif q == "Singapore Technologies":
+        r = get_stock_data("S63.SI")
+    else:
+        r = get_stock_data(q)
 
     # If no data, handle the case
     if r is None:
-        # return render_template('shares.html', error=f"Could not fetch data for {q}. Please check the symbol.", r=None)
-        return render_template('shares.html', error=f"Could not fetch data for DBS. Please check the symbol.", r=None)
+        return render_template('shares.html', error=f"Could not fetch data for {q}. Please check the symbol.", r=None)
     
     # Render the page with the stock data
     return render_template('shares.html', r=r)

@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
-</head>
-<body>
-    <div class="container">
-        <h1>Banks</h1>
-
-        <div class="options">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Banks</h2>
             <form action="/shares" method="post">
-                <p><input type="submit" name="q" value="DBS"></p>
+                <input type="submit" name="q" value="DBS">
             </form>
-            <!-- <a href="shares.html">DBS</a> -->  <!-- Links to Shares page -->
-            <a href="shares.html">OCBC</a>  <!-- Links to Shares page -->
-            <a href="shares.html">UOB</a>   <!-- Links to Shares page -->
-            <a class="home-button" href="index.html">Home</a> <!-- Links back to the home page -->
+            <form action="/shares" method="post">
+                <input type="submit" name="q" value="OCBC">
+            </form>
+            <form action="/shares" method="post">
+                <input type="submit" name="q" value="UOB">
+            </form>
+            <form action="/group_assignment" method="post">
+                <input type="submit" value="Group Assignment">
+            </form>
         </div>
-    </div>
-</body>
+    </body>
 </html>

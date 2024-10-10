@@ -6,14 +6,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>GLCs</h1>
-
-        <div class="options">
-            <a href="shares.html">Semb Corp Industries</a>   <!-- Links to Capitaland REIT details -->
-            <a href="shares.html">Keppel Corporation</a>      <!-- Links to Frasers REIT details -->
-            <a href="shares.html">Singapore Technologies</a>    <!-- Links to Mapletree REIT details -->
-            <a class="home-button" href="index.html">Home</a> <!-- Links back to the home page -->
-        </div>
+        <h2>GLCs</h2>
+        <form action="/shares" method="post">
+            <input type="submit" name="q" value="Sembcorp Industries">
+        </form>
+        <form action="/shares" method="post">
+            <input type="submit" name="q" value="Keppel Ltd">
+        </form>
+        <form action="/shares" method="post">
+            <input type="submit" name="q" value="Singapore Technologies">
+        </form>
+        <form action="/group_assignment" method="post">
+            <input type="submit" value="Group Assignment">
+        </form>
     </div>
 </body>
 </html>

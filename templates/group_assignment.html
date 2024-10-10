@@ -12,17 +12,23 @@
                     <input type="submit" value="Banks">
                 </form>
                 <form action="/reits" method="post">
-                    <input type="submit" value="Reits">
+                    <input type="submit" value="REITs">
                 </form>
                 <form action="/glcs" method="post">
-                    <input type="submit" value="Glcs">
+                    <input type="submit" value="GLCs">
                 </form>
             </div>
     
             <div class="input-section">
-                <label for="ticker">Enter the ticker number:</label><br>
-                <input type="text" id="ticker" name="ticker" placeholder="Enter ticker number"><br>
-                <button type="submit" id="submit-btn">Submit</button>
+                <label for="ticker">Please enter ticker number:</label><br>
+                <!-- <input type="text" id="ticker" name="ticker" placeholder="Enter ticker number"><br>
+                <button type="submit" id="submit-btn">Submit</button> -->
+                <form action="/shares" method="post">
+                    <!-- <h4>Please enter ticker number</h4> -->
+                    <p><input type="text" name="q"></p>
+                    <!-- <p><input type="submit"></p> -->
+                    <p><button type="submit">Submit</button></p>
+                </form>
                 <!-- <div id="error-message">Oops... pls key in a correct ticker symbol!</div> -->
             </div>
         </div>
