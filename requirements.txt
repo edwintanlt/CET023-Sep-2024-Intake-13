@@ -5,4 +5,4 @@ numpy
 textblob
 yfinance
 babel
-pickle
+scikit-learn
