@@ -6,3 +6,4 @@ textblob
 yfinance
 babel
 scikit-learn
+joblib

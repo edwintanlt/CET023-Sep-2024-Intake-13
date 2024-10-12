@@ -14,9 +14,9 @@ genai.configure(api_key="AIzaSyDgb0vUuFH_K46kU-0gmqkIcmIOdYQxgpE")
 
 app = Flask(__name__)
 
-# model2 = joblib.load('templates/bankruptcy_model.pkl')
-with open('templates/bankruptcy_model.pkl', 'rb') as f:
-    model2 = pickle.load(f)
+model2 = joblib.load('templates/bankruptcy_model.pkl')
+# with open('templates/bankruptcy_model.pkl', 'rb') as f:
+#     model2 = pickle.load(f)
 
 def get_stock_data(q):
     # Get stock data using yfinance
