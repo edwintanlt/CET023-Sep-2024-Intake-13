@@ -6,16 +6,17 @@ import textblob as tb
 import joblib
 import yfinance as yf
 from babel.numbers import format_currency
+import pickle
 
-'''
 model = genai.GenerativeModel("gemini-1.5-flash")
 api = os.getenv("MAKERSUITE")
 genai.configure(api_key="AIzaSyDgb0vUuFH_K46kU-0gmqkIcmIOdYQxgpE")
-'''
 
 app = Flask(__name__)
 
-model = joblib.load('bankruptcy_model.pkl')
+# model2 = joblib.load('templates/bankruptcy_model.pkl')
+with open('templates/bankruptcy_model.pkl', 'rb') as f:
+    model2 = pickle.load(f)
 
 def get_stock_data(q):
     # Get stock data using yfinance
@@ -176,13 +177,13 @@ def predict():
         
         # Step 5: Make prediction using the Random Forest model
         data = np.array([[working_capital, retained_earnings, EBIT, total_liabilities, sales, equity]])
-        prediction = model.predict(data)
+        prediction = model2.predict(data)
         
         # Step 6: Return the prediction result
         if prediction == 0:
-            return render_template('index.html', prediction_text='The company is NOT likely to go bankrupt.')
+            return render_template('individual_assignment.html', prediction_text='The company is NOT likely to go bankrupt.')
         else:
-            return render_template('index.html', prediction_text='The company is likely to go bankrupt.')
+            return render_template('individual_assignment.html', prediction_text='The company is likely to go bankrupt.')
     
     return render_template('index.html')
 
