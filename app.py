@@ -15,7 +15,7 @@ genai.configure(api_key="AIzaSyDgb0vUuFH_K46kU-0gmqkIcmIOdYQxgpE")
 
 app = Flask(__name__)
 
-model = joblib.load('/workspaces/CET023-Sep-2024-Intake-13/templates/bankruptcy_model.pkl')
+model = joblib.load('/templates/bankruptcy_model.pkl')
 
 def get_stock_data(q):
     # Get stock data using yfinance
